@@ -6,11 +6,13 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "teamx.ideahacks"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,6 +22,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -27,8 +30,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
 
 
     implementation 'com.google.firebase:firebase-auth:19.1.0'
@@ -67,8 +68,7 @@ dependencies {
     implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
 
 
-    // progragebar
-    implementation 'com.sasank.roundedhorizontalprogress:roundedhorizontalprogress:1.0.1'
-
+    implementation 'com.github.marlonlom:timeago:1.0.0'
 
 }
+

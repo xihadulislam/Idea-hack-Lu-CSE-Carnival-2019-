@@ -1,20 +1,14 @@
-package com.cra.safedriver.Adapters;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package teamx.ideahacks.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.cra.safedriver.R;
-
 import java.util.ArrayList;
 
 public class ScreenSlidePageFragment extends FragmentStatePagerAdapter {
+
 
 
 

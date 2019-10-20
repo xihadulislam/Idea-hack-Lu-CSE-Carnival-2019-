@@ -101,11 +101,10 @@ public class SignupActivity extends AppCompatActivity {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
                             if (task.isSuccessful()) {
                                 FirebaseUser us = FirebaseAuth.getInstance().getCurrentUser();
 
-                                UserModel userModel = new UserModel(username,university_id,email ,us.getUid(),null,System.currentTimeMillis(),0);
+                                UserModel userModel = new UserModel(username,university_id,email ,us.getUid(),null,System.currentTimeMillis(),0,0);
 
                                 collectionReference.document(us.getUid()).set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
@@ -140,6 +139,7 @@ public class SignupActivity extends AppCompatActivity {
         });
 
     }
+
 
 
     @Override

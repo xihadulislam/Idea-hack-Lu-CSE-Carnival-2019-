@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -46,6 +47,7 @@ import java.util.Objects;
 
 import teamx.ideahacks.MainActivity;
 import teamx.ideahacks.Models.PostModel;
+import teamx.ideahacks.Models.UserModel;
 import teamx.ideahacks.R;
 
 /**
@@ -224,16 +226,14 @@ public class CreateIdeaFragment extends Fragment {
 
         if (muri==null){
             ImageUri = "No Image";
-
-
             final   String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-            PostModel postModel = new PostModel(title,des,ImageUri,userid,"erewrwerw","new",System.currentTimeMillis(),"0","0");
+            PostModel postModel = new PostModel(title,des,ImageUri,userid,"erewrwerw","new",System.currentTimeMillis(),0,0,"true");
 
             FirebaseFirestore.getInstance().collection("Ideas").add(postModel).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentReference> task) {
-                    PostModel postModel2 = new PostModel(title,des,ImageUri,userid,task.getResult().getId(),"new",System.currentTimeMillis(),"0","0");
+                    PostModel postModel2 = new PostModel(title,des,ImageUri,userid,task.getResult().getId(),"new",System.currentTimeMillis(),0,0,"true");
 
                     FirebaseFirestore.getInstance().collection("Ideas")
                             .document(task.getResult().getId()).set(postModel2).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -246,6 +246,27 @@ public class CreateIdeaFragment extends Fragment {
                                 Toast.makeText(getActivity(), "Upload Successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getActivity(), MainActivity.class));
                                 getActivity().finish();
+
+
+                                FirebaseFirestore.getInstance().collection("userinfo").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                                        DocumentSnapshot doc = task.getResult();
+                                        UserModel userModel = doc.toObject(UserModel.class);
+
+                                        int t = userModel.getSubmit();
+
+                                        int tt=t+1;
+
+                                        FirebaseFirestore.getInstance().collection("userinfo").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                .update("submit",tt);
+                                    }
+                                });
+
+
+
                             }
                             else
                             {
@@ -274,22 +295,22 @@ public class CreateIdeaFragment extends Fragment {
             mUploadTask = fileReference.putFile(muri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
 
                             fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
-                                public void onSuccess(Uri uri) {
+                                public void onSuccess(final Uri uri) {
 
                                     ImageUri = uri.toString();
 
                                   final   String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                                    PostModel postModel = new PostModel(title,des,ImageUri,userid,"erewrwerw","new",System.currentTimeMillis(),"0","0");
+                                    PostModel postModel = new PostModel(title,des,ImageUri,userid,"erewrwerw","new",System.currentTimeMillis(),0,0,"true");
 
                                     FirebaseFirestore.getInstance().collection("Ideas").add(postModel).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                                         @Override
                                         public void onComplete(@NonNull Task<DocumentReference> task) {
-                                            PostModel postModel2 = new PostModel(title,des,ImageUri,userid,task.getResult().getId(),"new",System.currentTimeMillis(),"0","0");
+                                            PostModel postModel2 = new PostModel(title,des,ImageUri,userid,task.getResult().getId(),"new",System.currentTimeMillis(),0,0,"true");
 
                                             FirebaseFirestore.getInstance().collection("Ideas")
                                                     .document(task.getResult().getId()).set(postModel2).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -297,11 +318,33 @@ public class CreateIdeaFragment extends Fragment {
                                                 public void onComplete(@NonNull Task<Void> task) {
 
                                                     if (task.isSuccessful()){
+
+
                                                         progressDialog.dismiss();
+
 
                                                         Toast.makeText(getActivity(), "Upload Successful", Toast.LENGTH_SHORT).show();
                                                         startActivity(new Intent(getActivity(), MainActivity.class));
                                                         getActivity().finish();
+
+
+                                                        FirebaseFirestore.getInstance().collection("userinfo").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                                                                DocumentSnapshot doc = task.getResult();
+                                                                UserModel userModel = doc.toObject(UserModel.class);
+
+                                                               int t = userModel.getSubmit();
+
+                                                               int tt=t+1;
+
+                                                                FirebaseFirestore.getInstance().collection("userinfo").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                                        .update("submit",tt);
+                                                            }
+                                                        });
+
                                                     }
                                                     else
                                                     {
@@ -334,8 +377,6 @@ public class CreateIdeaFragment extends Fragment {
                             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
 
 
 

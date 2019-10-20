@@ -5,12 +5,15 @@ public class PostModel {
 
     String title,description,imgaeurl,userID,id,status;
     long create_at;
-    String upvote,downvote;
+    int upvote,downvote;
+    String  isEnable;
+
+
 
     public PostModel() {
     }
 
-    public PostModel(String title, String description, String imgaeurl, String userID, String id, String status, long create_at, String upvote, String downvote) {
+    public PostModel(String title, String description, String imgaeurl, String userID, String id, String status, long create_at, int upvote, int downvote, String isEnable) {
         this.title = title;
         this.description = description;
         this.imgaeurl = imgaeurl;
@@ -20,6 +23,7 @@ public class PostModel {
         this.create_at = create_at;
         this.upvote = upvote;
         this.downvote = downvote;
+        this.isEnable = isEnable;
     }
 
     public String getTitle() {
@@ -78,19 +82,28 @@ public class PostModel {
         this.create_at = create_at;
     }
 
-    public String getUpvote() {
+    public int getUpvote() {
         return upvote;
     }
 
-    public void setUpvote(String upvote) {
+    public void setUpvote(int upvote) {
         this.upvote = upvote;
     }
 
-    public String getDownvote() {
+    public int getDownvote() {
         return downvote;
     }
 
-    public void setDownvote(String downvote) {
+    public void setDownvote(int downvote) {
         this.downvote = downvote;
     }
+
+    public String getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(String isEnable) {
+        this.isEnable = isEnable;
+    }
 }
+

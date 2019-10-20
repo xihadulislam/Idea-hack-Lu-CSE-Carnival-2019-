@@ -70,5 +70,8 @@ dependencies {
 
     implementation 'com.github.marlonlom:timeago:1.0.0'
 
-}
 
+    implementation 'com.bestsoft32.tayyab:tt-fancy-gif-dialog:1.0.2'
+
+
+}

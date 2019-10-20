@@ -4,13 +4,13 @@ public class UserModel {
 
     String username,university_id,email,userid,status;
     long create_at;
-    int giveVote;
+    int giveVote,submit;
 
     public UserModel() {
     }
 
 
-    public UserModel(String username, String university_id, String email, String userid, String status, long create_at, int giveVote) {
+    public UserModel(String username, String university_id, String email, String userid, String status, long create_at, int giveVote, int submit) {
         this.username = username;
         this.university_id = university_id;
         this.email = email;
@@ -18,6 +18,7 @@ public class UserModel {
         this.status = status;
         this.create_at = create_at;
         this.giveVote = giveVote;
+        this.submit = submit;
     }
 
     public String getUsername() {
@@ -74,5 +75,13 @@ public class UserModel {
 
     public void setGiveVote(int giveVote) {
         this.giveVote = giveVote;
+    }
+
+    public int getSubmit() {
+        return submit;
+    }
+
+    public void setSubmit(int submit) {
+        this.submit = submit;
     }
 }

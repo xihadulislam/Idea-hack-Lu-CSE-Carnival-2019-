@@ -19,4 +19,18 @@
     <string name="upload">Upload</string>
     <string name="description">Description</string>
     <string name="choose_a_photo">choose a photo</string>
+
+
+    <string-array name="filter">
+        <item>All</item>
+        <item>new</item>
+        <item>in-progress</item>
+        <item>completed</item>
+        <item>on hold</item>
+        <item>upvote</item>
+        <item>downvote</item>
+
+    </string-array>
+
+
 </resources>

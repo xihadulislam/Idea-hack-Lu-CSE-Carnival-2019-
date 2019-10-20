@@ -7,46 +7,21 @@
     tools:context=".LoginActivity">
 
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:background="@color/colorPrimary">
-
-            </LinearLayout>
-
-            <ScrollView
+            <androidx.core.widget.NestedScrollView
+                android:layout_marginBottom="70dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
 
-
-            <LinearLayout
-                android:id="@+id/lin"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
-                android:gravity="center">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
-                    app:cardUseCompatPadding="true"
-                    app:contentPadding="5dp">
-
                     <LinearLayout
-                        android:layout_margin="10dp"
+                        android:layout_marginTop="20sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tollbar"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:paddingBottom="30dp">
@@ -57,27 +32,167 @@
                             app:civ_border_color="@color/colorPrimary"
                             android:layout_width="120dp"
                             android:layout_height="120dp" />
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:id="@+id/userNameIDpro"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textSize="24sp"
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/grey_active" />
+
+                        <LinearLayout
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text="Id :"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/profileID"
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text=""
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/grey_active" />
+
+
+                        <LinearLayout
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text="Total Votes :"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/profiletotalvote"
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text=""
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/grey_active" />
+
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text="Total Idea Submit :"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/profileIdeasubmit"
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:text=""
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
 
 
                         <TextView
-                            android:fontFamily="@font/roboto_medium"
                             android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="Your Bookmark List"
+                            android:background="@color/blue_bg_light"
                             android:padding="10dp"
-                            android:text="@string/app_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <ProgressBar
+                            android:visibility="gone"
+                            android:id="@+id/progress_circular44"
+                            android:layout_marginTop="20sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/bookmarkrecyID"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="Your Ideas"
+                            android:background="@color/blue_bg_light"
+                            android:padding="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
 
+                        <ProgressBar
+                            android:visibility="gone"
+                            android:id="@+id/progress_circular2"
+                            android:layout_marginTop="20sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/proRecyId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
 
 
-
-            </LinearLayout>
-
-
-            </ScrollView>
+            </androidx.core.widget.NestedScrollView>
         </RelativeLayout>
 
 

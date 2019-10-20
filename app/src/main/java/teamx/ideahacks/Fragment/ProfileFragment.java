@@ -177,7 +177,6 @@ public class ProfileFragment extends Fragment {
 
 
 
-
         query1 = reference.whereEqualTo("userID",user);
 
         progressBar.setVisibility(View.VISIBLE);

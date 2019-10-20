@@ -19,6 +19,23 @@
     <string name="upload">Upload</string>
     <string name="description">Description</string>
     <string name="choose_a_photo">choose a photo</string>
+    <string name="type_a_message">Type a Message..</string>
+    <string name="login_now">Login Now</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login">login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">sign up</string>
+    <string name="username">username</string>
+    <string name="already_have_an_account">Already Have an account??</string>
+    <string name="university_id">University Id</string>
+    <string name="create_a_account">Create a Account</string>
+    <string name="id">Id :</string>
+    <string name="total_votes">Total Votes :</string>
+    <string name="total_idea_submit">Total Idea Submit :</string>
+    <string name="your_bookmark_list">Your Bookmark List</string>
+    <string name="your_ideas">Your Ideas</string>
 
 
     <string-array name="filter">
@@ -31,6 +48,5 @@
         <item>downvote</item>
 
     </string-array>
-
 
 </resources>

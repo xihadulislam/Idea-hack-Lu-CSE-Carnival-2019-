@@ -11,7 +11,8 @@
 
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
 
         <LinearLayout
@@ -36,21 +37,20 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:drawableLeft="@drawable/ic_person_pin_black_24dp"
+                    android:drawableStart="@drawable/ic_person_pin_black_24dp"
                     android:id="@+id/showusername"
                     android:fontFamily="@font/roboto_medium"
                     android:textSize="18sp"
                     android:padding="10dp"
-                    android:text="username"
+                    android:text="@string/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/showcreateat"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:fontFamily="@font/roboto"
                     android:textSize="16sp"
                     android:padding="10dp"
-                    android:text="username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
@@ -71,7 +71,7 @@
                 android:background="@drawable/bag_left"
                 android:fontFamily="@font/roboto_medium"
                 android:padding="10dp"
-                android:text="dfsfsfs"
+
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -92,7 +92,7 @@
                 android:background="@drawable/bag_left"
                 android:fontFamily="@font/roboto_medium"
                 android:padding="10dp"
-                android:text="dfsfsfs"
+
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

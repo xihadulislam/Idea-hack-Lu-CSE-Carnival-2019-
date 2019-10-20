@@ -50,6 +50,7 @@ public class NotificationAdapter extends BaseAdapter {
         ImageView imageView;
         TextView title, subtitle,point;
 
+
         title = view.findViewById(R.id.itemmain_title);
         imageView = view.findViewById(R.id.itemmain_img);
         point = view.findViewById(R.id.pointId);

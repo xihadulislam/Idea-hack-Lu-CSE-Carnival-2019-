@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:background="@color/colorPrimary"
@@ -33,7 +33,6 @@
                     app:cardCornerRadius="30dp"
                     app:cardElevation="5dp"
                     app:cardUseCompatPadding="true"
-                    android:layout_below="@+id/tollbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
@@ -53,13 +52,13 @@
                             android:textSize="25sp"
                             android:gravity="center"
                             android:layout_gravity="center"
-                            android:text="Create a Account"
+                            android:text="@string/create_a_account"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
                         <com.rengwuxian.materialedittext.MaterialEditText
                             android:id="@+id/usernameId"
-                            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                            android:drawableStart="@drawable/ic_account_circle_black_24dp"
                             android:padding="20dp"
                             android:hint=" Username"
                             android:inputType="text"
@@ -69,9 +68,9 @@
                             />
                         <com.rengwuxian.materialedittext.MaterialEditText
                             android:id="@+id/UniuserId"
-                            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                            android:drawableStart="@drawable/ic_account_circle_black_24dp"
                             android:padding="20dp"
-                            android:hint=" University Id"
+                            android:hint="@string/university_id"
                             android:inputType="text"
                             android:textColorHint="#FFFCFC"
                             android:layout_width="match_parent"
@@ -80,7 +79,7 @@
 
                         <com.rengwuxian.materialedittext.MaterialEditText
                             android:id="@+id/emailId"
-                            android:drawableLeft="@drawable/ic_email_black_24dp"
+                            android:drawableStart="@drawable/ic_email_black_24dp"
                             android:padding="20dp"
                             android:hint=" Email"
                             android:inputType="textEmailAddress"
@@ -90,7 +89,7 @@
                             />
                         <com.rengwuxian.materialedittext.MaterialEditText
                             android:id="@+id/passwordId"
-                            android:drawableLeft="@drawable/ic_lock_black_24dp"
+                            android:drawableStart="@drawable/ic_lock_black_24dp"
                             android:padding="20dp"
                             android:hint=" Password"
                             android:inputType="textPassword"
@@ -125,7 +124,7 @@
                                 android:textStyle="bold"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="15sp"
-                                android:text="Already Have an account?? "
+                                android:text="@string/already_have_an_account"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
@@ -133,7 +132,7 @@
                                 android:id="@+id/backloginpage"
                                 android:textStyle="bold"
                                 android:textColor="#F44336"
-                                android:textSize="15dp"
+                                android:textSize="15sp"
                                 android:text="Login now"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />

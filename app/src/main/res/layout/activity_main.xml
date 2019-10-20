@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.gauravk.bubblenavigation.BubbleToggleView
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/l_item_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             app:bt_title="@string/home" />
 
         <com.gauravk.bubblenavigation.BubbleToggleView
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/l_item_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             app:bt_title="Create Idea" />
 
         <com.gauravk.bubblenavigation.BubbleToggleView
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/l_item_profile_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

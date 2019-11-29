@@ -39,6 +39,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+
             android:layout_marginBottom="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginRight="10dp"
@@ -62,10 +63,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-
         </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:focusable="true"
         android:layout_below="@+id/rely0"
         android:layout_marginBottom="70dp"
         android:id="@+id/recypostID"

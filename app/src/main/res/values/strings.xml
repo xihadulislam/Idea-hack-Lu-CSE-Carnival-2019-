@@ -19,7 +19,7 @@
     <string name="upload">Upload</string>
     <string name="description">Description</string>
     <string name="choose_a_photo">choose a photo</string>
-    <string name="type_a_message">Type a Message..</string>
+    <string name="type_a_message">Type a Comment..</string>
     <string name="login_now">Login Now</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -50,3 +50,6 @@
     </string-array>
 
 </resources>
+
+
+

@@ -247,7 +247,6 @@ public class CreateIdeaFragment extends Fragment {
                                 startActivity(new Intent(getActivity(), MainActivity.class));
                                 getActivity().finish();
 
-
                                 FirebaseFirestore.getInstance().collection("userinfo").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                     @Override
@@ -385,9 +384,7 @@ public class CreateIdeaFragment extends Fragment {
 
 
 
-
     }
-
 
 
 

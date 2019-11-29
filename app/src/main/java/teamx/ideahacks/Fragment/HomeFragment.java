@@ -138,10 +138,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                String  newText = editText.getText().toString().trim();
-                List<PostModel> newList = filter(postModelList, newText);
-                Log.d(TAG, "onQueryTextChange: " + newList);
-                adapter.setfilter(newList);
+                
+                try {
+                    String  newText = editText.getText().toString().trim();
+                    List<PostModel> newList = filter(postModelList, newText);
+                    Log.d(TAG, "onQueryTextChange: " + newList);
+                    adapter.setfilter(newList);
+                }
+                catch (Exception e){
+                    Log.d(TAG, "onTextChanged: ");
+                }
+                
             }
 
             @Override
@@ -149,8 +156,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-
 
 
 
